@@ -2,8 +2,28 @@
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
       <h1 class="bg-primary text-center p25">
-        Bootstrapped!
-      </h1>
+      Addresses
+       </h1>
+       <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Address</th>
+              <th scope="col">Distance from White House</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @addresses.each do |a|%>
+                <tr>
+                  <td>
+                    <%= a.full_address %>
+                  </td>
+                  <td>
+                    <%= a.get_distance_from("1600 Pennsylvania Avenue NW Washington, D.C. 20500", a) %>
+                  </td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
     </div>
   </div>
 </div>
